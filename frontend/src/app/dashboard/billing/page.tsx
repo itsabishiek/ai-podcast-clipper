@@ -1,8 +1,10 @@
+"use client";
+
 import type { VariantProps } from "class-variance-authority";
 import { ArrowLeftIcon, CheckIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import type { PriceId } from "~/actions/stripe";
+import { createCheckoutSession, type PriceId } from "~/actions/stripe";
 import { Button, buttonVariants } from "~/components/ui/button";
 import {
   Card,
@@ -96,8 +98,15 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
         </ul>
       </CardContent>
       <CardFooter>
-        <form className="w-full">
-          <Button variant={plan.buttonVariant} className="w-full" type="submit">
+        <form
+          className="w-full"
+          action={() => createCheckoutSession(plan.priceId)}
+        >
+          <Button
+            variant={plan.buttonVariant}
+            className="w-full cursor-pointer"
+            type="submit"
+          >
             {plan.buttonText}
           </Button>
         </form>
