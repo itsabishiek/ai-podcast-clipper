@@ -156,7 +156,7 @@ const DashboardClient: React.FC<DashboardClientProps> = ({
                         or click to browse (MP4 up to 500MB)
                       </p>
                       <Button
-                        className="cursor-pointer bg-black hover:bg-black/80 dark:bg-white dark:hover:bg-white/80"
+                        className="cursor-pointer"
                         variant="default"
                         size="sm"
                         disabled={uploading}
