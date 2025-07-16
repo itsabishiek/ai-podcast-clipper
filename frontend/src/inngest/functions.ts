@@ -160,5 +160,5 @@ async function listS3ObjectsByPrefix(prefix: string) {
 
   const response = await s3Client.send(listCommand);
 
-  return response.Contents?.map((item) => item.Key).filter(Boolean) || [];
+  return response.Contents?.map((item) => item.Key).filter(Boolean) ?? [];
 }

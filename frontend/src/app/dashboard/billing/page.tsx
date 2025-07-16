@@ -5,7 +5,7 @@ import { ArrowLeftIcon, CheckIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { createCheckoutSession, type PriceId } from "~/actions/stripe";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { Button, type buttonVariants } from "~/components/ui/button";
 import {
   Card,
   CardContent,

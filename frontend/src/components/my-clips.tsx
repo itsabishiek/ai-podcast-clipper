@@ -31,16 +31,16 @@ const ClipCard = ({ clip }: { clip: Clip }) => {
         if (result.success && result.url) {
           setPlayUrl(result.url);
         } else if (result.error) {
-          console.error("Failed to get play url: " + result.error);
+          console.error("Failed to get play url: ", result.error);
         }
       } catch (error) {
-        console.error("Failed to get play url: " + error);
+        console.error("Failed to get play url: ", error);
       } finally {
         setIsLoadingUrl(false);
       }
     }
 
-    fetchPlayUrl();
+    void fetchPlayUrl();
   }, [clip.id]);
 
   return (

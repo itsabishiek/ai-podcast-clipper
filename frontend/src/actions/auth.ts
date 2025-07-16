@@ -16,7 +16,7 @@ export async function signUp(data: SignupFormValues): Promise<SignupResult> {
   if (!validationResult.success) {
     return {
       success: false,
-      error: validationResult.error.issues[0]?.message || "Invalid Input",
+      error: validationResult.error.issues[0]?.message ?? "Invalid Input",
     };
   }
 
